@@ -1,13 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Jellyfin.Plugin.FinampStatsSync.Database;
 using Jellyfin.Plugin.Template.Configuration;
 using MediaBrowser.Common.Configuration;
 using MediaBrowser.Common.Plugins;
+using MediaBrowser.Controller;
+using MediaBrowser.Controller.Library;
+using MediaBrowser.Controller.Plugins;
 using MediaBrowser.Model.Plugins;
 using MediaBrowser.Model.Serialization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Jellyfin.Plugin.Template;
+namespace Jellyfin.Plugin.FinampStatsSync;
 
 /// <summary>
 /// The main plugin.
@@ -26,10 +33,10 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
     }
 
     /// <inheritdoc />
-    public override string Name => "Template";
+    public override string Name => "Finamp Stats Sync";
 
     /// <inheritdoc />
-    public override Guid Id => Guid.Parse("eb5d7894-8eef-4b36-aa6f-5d124e828ce1");
+    public override Guid Id => Guid.Parse("b179ee3f-bb23-4699-88d7-70316fd5a9fb");
 
     /// <summary>
     /// Gets the current plugin instance.
